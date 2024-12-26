@@ -1,0 +1,8 @@
+/home/youssef/git/gest/backend/src/main/java/com/example/backend/BackendApplication.java
+/home/youssef/git/gest/backend/src/main/java/com/example/backend/controller/PersonnelController.java
+/home/youssef/git/gest/backend/src/main/java/com/example/backend/controller/VehicleController.java
+/home/youssef/git/gest/backend/src/main/java/com/example/backend/entity/Personnel.java
+/home/youssef/git/gest/backend/src/main/java/com/example/backend/entity/Vehicle.java
+/home/youssef/git/gest/backend/src/main/java/com/example/backend/repository/PersonnelRepository.java
+/home/youssef/git/gest/backend/src/main/java/com/example/backend/repository/VehicleRepository.java
+/home/youssef/git/gest/backend/src/main/java/com/example/backend/service/PersonnelService.java
