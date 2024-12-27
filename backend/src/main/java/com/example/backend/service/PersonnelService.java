@@ -25,7 +25,7 @@ public class PersonnelService {
     public Personnel updatePersonnel(Long id, Personnel personnel) {
         Personnel existingPersonnel = personnelRepository.findById(id).orElseThrow();
         existingPersonnel.setName(personnel.getName());
-        existingPersonnel.setRole(personnel.getRole());
+       // existingPersonnel.setRole(personnel.getRole());
         return personnelRepository.save(existingPersonnel);
     }
 

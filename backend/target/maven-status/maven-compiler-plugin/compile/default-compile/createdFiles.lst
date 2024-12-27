@@ -1,0 +1,8 @@
+com/example/backend/controller/PersonnelController.class
+com/example/backend/entity/Vehicle.class
+com/example/backend/repository/VehicleRepository.class
+com/example/backend/BackendApplication.class
+com/example/backend/repository/PersonnelRepository.class
+com/example/backend/controller/VehicleController.class
+com/example/backend/service/PersonnelService.class
+com/example/backend/entity/Personnel.class
