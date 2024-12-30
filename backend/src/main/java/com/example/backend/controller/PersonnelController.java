@@ -8,6 +8,7 @@ import com.example.backend.service.PersonnelService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/personnel")
@@ -16,6 +17,11 @@ public class PersonnelController {
 
     public PersonnelController(PersonnelService personnelService) {
         this.personnelService = personnelService;
+    }
+
+    @GetMapping("/statistics")
+    public Map<String, Object> getPersonnelStatistics() {
+        return personnelService.getStatistics();
     }
 
     @GetMapping

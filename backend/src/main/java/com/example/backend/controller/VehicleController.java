@@ -6,6 +6,7 @@ import com.example.backend.entity.Vehicle;
 import com.example.backend.service.VehicleService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/vehicles")
@@ -15,6 +16,10 @@ public class VehicleController {
     private final VehicleService vehicleService;
     public VehicleController(VehicleService vehicleService) {
         this.vehicleService = vehicleService;
+    }
+    @GetMapping("/statistics")
+    public Map<String, Object> getVehicleStatistics() {
+        return vehicleService.getStatistics();
     }
     
     @GetMapping

@@ -4,7 +4,8 @@ import com.example.backend.entity.Vehicle;
 import com.example.backend.repository.VehicleRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
-
+import java.util.Map;
+import java.util.HashMap;
 
 @Service
 public class VehicleService {
@@ -14,6 +15,14 @@ public class VehicleService {
         this.vehicleRepository = vehicleRepository;
     }
 
+    public Map<String, Object> getStatistics() {
+        Map<String, Object> stats = new HashMap<>();
+        stats.put("totalVehicles", vehicleRepository.count());
+        stats.put("typeDistribution", vehicleRepository.countByType());
+        stats.put("operationalStatus", vehicleRepository.countByOperational());
+        return stats;
+    }
+    
     public List<Vehicle> getAllVehicles() {
         return vehicleRepository.findAll();
     }
