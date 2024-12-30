@@ -1,0 +1,18 @@
+<div>
+    <h1>Dashboard</h1>
+    <div>
+        <h3>Personnel Statistics</h3>
+        <div ng-controller="PersonnelDashboardController">
+            <p>Total Personnel: {{ statistics.totalPersonnel }}</p>
+        </div>
+    </div>
+
+    <div>
+        <h3>Vehicle Statistics</h3>
+        <div ng-controller="VehicleDashboardController">
+            <p>Total Vehicles: {{ statistics.totalVehicles }}</p>
+        </div>
+    </div>
+
+    <a href="#/personnel">Manage Personnel</a> | <a href="#/vehicles">Manage Vehicles</a>
+</div>

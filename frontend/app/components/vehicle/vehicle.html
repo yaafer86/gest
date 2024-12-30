@@ -1,0 +1,19 @@
+<div>
+    <h2>Vehicle Management</h2>
+    <button ng-click="showAddEditForm()">Add Vehicle</button>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        <tr ng-repeat="vehicle in vehicles">
+            <td>{{ vehicle.type }}</td>
+            <td>{{ vehicle.operational ? 'Operational' : 'Non-operational' }}</td>
+            <td>
+                <button ng-click="edit(vehicle)">Edit</button>
+                <button ng-click="delete(vehicle.id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
