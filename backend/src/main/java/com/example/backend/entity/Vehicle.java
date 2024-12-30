@@ -1,11 +1,15 @@
 package com.example.backend.entity;
 
+
+import com.google.common.collect.Tables;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-
+import jakarta.persistence.Table;
 @Entity
+@Table(name = "vehicle")
 public class Vehicle {
     @Id
     private Long id;

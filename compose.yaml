@@ -2,7 +2,7 @@ services:
   backend:
     build: backend
     ports:
-      - 8080:8080
+      - 8080:8081
     environment:
       - POSTGRES_DB=my_database
     networks:
@@ -14,7 +14,7 @@ services:
       - db-password
     volumes:
       - db-data:/var/lib/postgresql/data
-      - createinit.sql:/docker-entrypoint-initdb.d/createinit.sql
+      - ./createinit.sql:/docker-entrypoint-initdb.d/createinit.sql
     networks:
       - spring-postgres
     environment:
