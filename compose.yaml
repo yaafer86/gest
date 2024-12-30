@@ -14,6 +14,7 @@ services:
       - db-password
     volumes:
       - db-data:/var/lib/postgresql/data
+      - createinit.sql:/docker-entrypoint-initdb.d/createinit.sql
     networks:
       - spring-postgres
     environment:
@@ -28,4 +29,3 @@ secrets:
     file: db/password.txt
 networks:
   spring-postgres:
-
