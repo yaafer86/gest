@@ -9,6 +9,17 @@ services:
       - spring-postgres
     depends_on:
       - db
+  frontend:
+    image: nginx:alpine
+    container_name: angular-frontend
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - spring-postgres
   db:
     image: postgres
     restart: always
