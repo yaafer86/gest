@@ -1,0 +1,54 @@
+<h2>Personnel Management</h2>
+
+<button (click)="toggleForm()">{{ showForm ? 'Hide Form' : 'Add Personnel' }}</button>
+
+<div *ngIf="showForm">
+  <h3>Add New Personnel</h3>
+  <form (ngSubmit)="addPersonnel()">
+    <input type="text" placeholder="Name" [(ngModel)]="newPersonnel.name" name="name" required><br>
+    <input type="text" placeholder="Sex" [(ngModel)]="newPersonnel.sex" name="sex" required><br>
+    <input type="number" placeholder="Age" [(ngModel)]="newPersonnel.age" name="age" required><br>
+    <input type="text" placeholder="Speciality" [(ngModel)]="newPersonnel.speciality" name="speciality" required><br>
+    <button type="submit">Add</button>
+  </form>
+</div>
+
+<div *ngIf="personnel && personnel.length > 0; else noPersonnel">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sex</th>
+                <th>Age</th>
+                <th>Speciality</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let personnel of personnel">
+                <td *ngIf="editingPersonnel?.id !== personnel.id">{{ personnel.name }}</td>
+                <td *ngIf="editingPersonnel?.id === personnel.id"><input type="text" [(ngModel)]="editingPersonnel.name"></td>
+                <td *ngIf="editingPersonnel?.id !== personnel.id">{{ personnel.sex }}</td>
+                <td *ngIf="editingPersonnel?.id === personnel.id"><input type="text" [(ngModel)]="editingPersonnel.sex"></td>
+                <td *ngIf="editingPersonnel?.id !== personnel.id">{{ personnel.age }}</td>
+                <td *ngIf="editingPersonnel?.id === personnel.id"><input type="number" [(ngModel)]="editingPersonnel.age"></td>
+                <td *ngIf="editingPersonnel?.id !== personnel.id">{{ personnel.speciality }}</td>
+                <td *ngIf="editingPersonnel?.id === personnel.id"><input type="text" [(ngModel)]="editingPersonnel.speciality"></td>
+                <td>
+                    <button *ngIf="editingPersonnel?.id !== personnel.id" (click)="editPersonnel(personnel)">Edit</button>
+                    <button *ngIf="editingPersonnel?.id === personnel.id" (click)="saveEditPersonnel()">Save</button>
+                    <button *ngIf="editingPersonnel?.id === personnel.id" (click)="cancelEdit()">Cancel</button>
+                    <button (click)="deletePersonnel(personnel.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-template #noPersonnel>
+  <p>No personnel data available.</p>
+</ng-template>
+
+<div *ngIf="personnel && personnel.length === 0">
+  <p>Loading Personnel data ...</p>
+</div>

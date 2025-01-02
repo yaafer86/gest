@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin(origins = "https://effective-couscous-r46765qwxwjxhp4gq-4200.app.github.dev/")
 @RestController
 @RequestMapping("/api/personnel")
 public class PersonnelController {
@@ -23,7 +24,7 @@ public class PersonnelController {
     public Map<String, Object> getPersonnelStatistics() {
         return personnelService.getStatistics();
     }
-
+   
     @GetMapping
     public List<Personnel> getAllPersonnel() {
         return personnelService.getAllPersonnel();

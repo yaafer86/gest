@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-vehicle',
+  imports: [],
   templateUrl: './vehicle.component.html',
-  styleUrls: ['./vehicle.component.css'],
+  styleUrl: './vehicle.component.scss'
 })
 export class VehicleComponent {
-  // Component logic here
+
 }

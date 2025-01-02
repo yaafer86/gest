@@ -1,0 +1,12 @@
+
+<div class="add-edit-container">
+  <h1 *ngIf="!isEditMode">Add Personnel</h1>
+  <h1 *ngIf="isEditMode">Edit Personnel</h1>
+  <form (ngSubmit)="savePersonnel()">
+    <label for="name">Name:</label>
+    <input id="name" [(ngModel)]="personnel.name" name="name" required />
+    <label for="speciality">Speciality:</label>
+    <input id="speciality" [(ngModel)]="personnel.speciality" name="speciality" required />
+    <button type="submit">Save</button>
+  </form>
+</div>

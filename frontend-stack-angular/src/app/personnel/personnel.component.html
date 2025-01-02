@@ -1,0 +1,26 @@
+
+<div class="personnel-container">
+  <h1>Personnel Management</h1>
+  <button routerLink="/add-personnel">Add Personnel</button>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Speciality</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of personnelList">
+        <td>{{ person.id }}</td>
+        <td>{{ person.name }}</td>
+        <td>{{ person.speciality }}</td>
+        <td>
+         <!-- <button [routerLink]="['/edit-personnel', person.id]">Edit</button>-->
+          <button (click)="deletePersonnel(person.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
